@@ -1,12 +1,9 @@
----
-title: Andrei Jay
----
 
 <!DOCTYPE HTML>
 <html lang="en">
 
 <head>
-  <title>{{ title }}</title>
+  <title>Contact</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <link href="/css/style.css" rel="stylesheet">
@@ -17,14 +14,29 @@ title: Andrei Jay
 
   <div class="container">
 
-    {% include "header.njk" %}
+    <header>
+  <h1>Andrei Jay</h1>
+
+  <ul class="navigation">
+    <li>
+      <a href="/" class="">Home</a>
+    </li>
+    <li>
+      <a href="/contact" class="active">Contact</a>
+    </li>
+
+  </ul>
+
+</header>
 
     <main>
-      {{ content | safe }}
+      <h2>Contact</h2>
+<p>Contact info here</p>
+
     </main>
 
     <footer>
-      {% if (content | wordcount > 200) %}<p><a href="#">&uarr; Go to top</a></p>{% endif %}
+      
     </footer>
 
   </div>

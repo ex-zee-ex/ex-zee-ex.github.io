@@ -1,14 +1,64 @@
-.container {/* container controls the maximum width of the pages*/
-  width: 720px;
-  margin: 0 auto 3em;
+:root {
+  --main-bg-color:rgb(196, 200, 221);
+  --main-text-color:rgb(48, 36, 47);
+  --link-color:rgb(122, 72, 109);
+  --header-text-color:var(--link-color);
+  --active-link-color:rgb(180, 76, 67);
+  --hover-link-color:rgb(135, 136, 184);
+  --body-font:"Optima", Optima, sans-serif;
+  --header-font:"Friz Quadrata", Optima, sans-serif;
 }
 
+/* Optima font */
 
-@media screen and (max-width: 768px) {
-  .container {
-    width: auto;
-    margin: 0 32px 3em;
-  }
+@font-face {
+  font-family: "Optima";
+  src: url("/fonts/OptimaLTPro-Roman.woff") format('woff');
+}
+
+@font-face {
+  font-family: "Optima";
+  src: url("/fonts/OptimaLTPro-Bold.woff") format('woff');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Optima";
+  src: url("/fonts/OptimaLTPro-BoldItalic.woff") format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Optima";
+  src: url("/fonts/OptimaLTPro-Italic.woff") format('woff');
+  font-style: italic;
+}
+
+/* Friz Quadrata font */
+
+@font-face {
+  font-family: "Friz Quadrata";
+  src: url("/fonts/friz-quadrata-std-medium.woff") format('woff');
+}
+
+@font-face {
+  font-family: "Friz Quadrata";
+  src: url("/fonts/friz-quadrata-std-bold.woff") format('woff');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Friz Quadrata";
+  src: url("/fonts/friz-quadrata-std-bold-italic.woff") format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Friz Quadrata";
+  src: url("/fonts/friz-quadrata-std-italic.woff") format('woff');
+  font-style: italic;
 }
 
 html {
@@ -23,11 +73,94 @@ body {
   width:100%;
   top:0;
   margin:0;
-  background-color:#D6BBFF;
-  font-family:Lucida Console, Liberation Mono, Menlo, Monaco, Consolas, monospace;
+  background-color:var(--main-bg-color);
+  color:var(--main-text-color);
+  font-family:var(--body-font);
+  font-size:1.3rem;
   line-height:1.4;
   letter-spacing:-0.02em;
   overflow-wrap:break-word;
+}
+
+.container {/* container controls the maximum width of the pages*/
+  width: 720px;
+  margin: 0 auto 3em;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: auto;
+    margin: 0 32px 3em;
+  }
+}
+
+.navigation {
+  list-style-type:none;
+  padding:0 0 1em;
+  margin-top:0;
+  font-weight:bold;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:left;
+  gap:1.2em;
+  text-transform:uppercase;
+}
+
+.navigation li a {
+  text-decoration:none;
+  padding:0.2em 0;
+  border-bottom:2px solid var(--link-color);
+}
+
+.navigation li a.active {
+  color:var(--active-link-color);
+  border-bottom:2px solid var(--active-link-color);
+  pointer-events: none;
+}
+
+.navigation li a:hover {
+  text-decoration:none;
+  border-bottom:2px solid var(--active-link-color);
+}
+
+footer {
+  margin-top:4em;
+  border-top:2px dotted var(--header-text-color)
+}
+
+/* text styles */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family:var(--header-font);
+  color:var(--header-text-color);
+  letter-spacing:0.02em;
+  margin-bottom:0.5em;
+  margin-block-end:0.5em;
+  line-height:1;
+}
+
+h1 {
+  text-transform:uppercase;
+  margin-bottom:0.1em;
+  padding-bottom:0;
+  font-size:2.5em;
+  letter-spacing:-0.01em;
+}
+
+h2 {
+  margin-top:1.2em;
+}
+
+p {
+  margin-block-start:0.5em;
+}
+
+a {
+  color:var(--link-color);
+}
+
+a:hover {
+  color:var(--active-link-color);
 }
 
 img {
@@ -35,4 +168,11 @@ img {
   margin-left:auto;
   margin-right:auto;
   max-width:100%;
+  border-radius:.5em;
+}
+
+img.floated {
+  float:right;
+  width:200px;
+  margin:0 1em 1em;
 }
