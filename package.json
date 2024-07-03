@@ -11,6 +11,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@11ty/eleventy": "3.0.0-alpha.12"
+    "@11ty/eleventy": "3.0.0-alpha.13"
   }
 }
